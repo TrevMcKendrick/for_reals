@@ -1,11 +1,5 @@
 <h1>Enter Address</h1>
 <%= form_for :property, :url => properties_path, :html => {:method => :get} do |f| %>
-  <!-- Street Address One: <%= f.text_field :street_address_one %> <br>
-  Street Address Two: <%= f.text_field :street_address_two %> <br>
-  Complex Number: <%= f.text_field :complex_number %> <br> -->
   City: <%= f.text_field :city %> <br>
-  <!-- State: <%= f.text_field :state %> <br> -->
-  <!-- Zipcode: <%= f.text_field :zipcode %> <br> -->
-
   <%= f.submit "Find Property" %>
 <% end %>
