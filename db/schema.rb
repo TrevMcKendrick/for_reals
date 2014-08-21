@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20140821030429) do
   end
 
   create_table "properties", force: true do |t|
-    t.string   "street_address_one", limit: 255
-    t.string   "street_address_two", limit: 255
-    t.string   "complex_number",     limit: 255
-    t.string   "city",               limit: 255
-    t.string   "state",              limit: 255
-    t.string   "zipcode",            limit: 255
+    t.string   "street_address_one"
+    t.string   "street_address_two"
+    t.string   "complex_number"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
