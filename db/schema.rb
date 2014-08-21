@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821033834) do
+ActiveRecord::Schema.define(version: 20140821055810) do
+
+  create_table "addresses", force: true do |t|
+    t.string   "number"
+    t.string   "number_direction"
+    t.string   "street_name"
+    t.string   "street_direction"
+    t.string   "street_type"
+    t.string   "complex"
+    t.string   "unit"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "property_id"
+  end
 
   create_table "counties", force: true do |t|
     t.string   "site_address"
@@ -21,12 +37,6 @@ ActiveRecord::Schema.define(version: 20140821033834) do
   end
 
   create_table "properties", force: true do |t|
-    t.string   "street_address_one"
-    t.string   "street_address_two"
-    t.string   "complex_number"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "county_id"
