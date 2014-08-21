@@ -1,0 +1,56 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+if Rails.env == "development"
+  Property.destroy_all
+end
+
+Property.create(
+:street_address_one => "856 Cedar Pine Court",
+:complex_number => "20",
+:city => "Salt Lake City",
+:state => "UT",
+:zipcode => "84106")
+
+
+COUNTY_SITE_LOOKUP = {
+"Beaver County" => "Not available online",
+"Box Elder County" => "http://erecord.boxeldercounty.org/eaglesoftware/taxweb/search.jsp",
+"Cache County" => "",
+"Carbon County" => "",
+"Daggett County" => "",
+"Davis County" => "",
+"Duchesne County" => "",
+"Emery County" => "",
+"Garfield County" => "",
+"Grand County" => "",
+"Iron County" => "",
+"Juab County" => "",
+"Kane County" => "",
+"Millard County" => "",
+"Morgan County" => "",
+"Piute County" => "",
+"Rich County" => "",
+"Salt Lake County" => "http://assessor.slco.org/",
+"San Juan County" => "",
+"Sanpete County" => "",
+"Sevier County" => "",
+"Summit County" => "",
+"Tooele County" => "",
+"Uintah County" => "",
+"Utah County" => "",
+"Wasatch County" => "",
+"Washington County" => "",
+"Wayne County" => "",
+"Weber County" => ""
+}
+
+COUNTY_SITE_LOOKUP.each do |county, site|
+  County.create(:name => county, :site_address => site)
+end
