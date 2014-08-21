@@ -7,9 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-if Rails.env == "development"
+if Rails.env == "development" || "test"
   Property.destroy_all
   County.destroy_all
+  Address.destroy_all
 end
 
 COUNTY_SITE_LOOKUP = {
@@ -50,9 +51,16 @@ end
 
 salt_lake_county = County.where(:name => "Salt Lake County").first
 
-salt_lake_county.properties.create(
-:street_address_one => "856 Cedar Pine Court",
-:complex_number => "20",
+salt_lake_address = Address.create(
+:number => "856",
+:street_direction => "E",
+:street_name => "Cedar Pine Court",
+:street_type => "Ave",
+:unit => "20",
 :city => "Salt Lake City",
 :state => "UT",
-:zipcode => "84106")
+:zipcode => "84106"
+ )
+
+salt_lake_county.properties.create(
+:address => salt_lake_address)
