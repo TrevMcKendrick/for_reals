@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+salt_lake:
+  number: 856
+  street_direction: E
+  street_name: Cedar Pine Court
+  street_type: Ave
+  unit: 20
+  city: Salt Lake City
+  state: UT
+  zipcode: 84106
+  property: cedar_pine_court

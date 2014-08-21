@@ -1,17 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  street_address_one: MyString
-  street_address_two: MyString
-  complex_number: MyString
-  city: MyString
-  state: MyString
-  zipcode: MyString
-
-two:
-  street_address_one: MyString
-  street_address_two: MyString
-  complex_number: MyString
-  city: MyString
-  state: MyString
-  zipcode: MyString
+cedar_pine_court:
+  created_at: 2014-08-21 08:06:22
+  county: salt_lake_county

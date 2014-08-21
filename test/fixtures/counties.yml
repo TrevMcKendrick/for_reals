@@ -1,7 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  site_address: MyString
-
-two:
-  site_address: MyString
+salt_lake_county:
+  name: Salt Lake County
+  site_address: http://assessor.slco.org/
