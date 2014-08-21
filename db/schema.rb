@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140821030429) do
+ActiveRecord::Schema.define(version: 20140821033834) do
 
   create_table "counties", force: true do |t|
     t.string   "site_address"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140821030429) do
     t.string   "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "county_id"
   end
 
 end
