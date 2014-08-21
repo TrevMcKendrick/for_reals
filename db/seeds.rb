@@ -9,15 +9,8 @@
 
 if Rails.env == "development"
   Property.destroy_all
+  County.destroy_all
 end
-
-Property.create(
-:street_address_one => "856 Cedar Pine Court",
-:complex_number => "20",
-:city => "Salt Lake City",
-:state => "UT",
-:zipcode => "84106")
-
 
 COUNTY_SITE_LOOKUP = {
 "Beaver County" => "Not available online",
@@ -54,3 +47,12 @@ COUNTY_SITE_LOOKUP = {
 COUNTY_SITE_LOOKUP.each do |county, site|
   County.create(:name => county, :site_address => site)
 end
+
+salt_lake_county = County.where(:name => "Salt Lake County").first
+
+salt_lake_county.properties.create(
+:street_address_one => "856 Cedar Pine Court",
+:complex_number => "20",
+:city => "Salt Lake City",
+:state => "UT",
+:zipcode => "84106")
