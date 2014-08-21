@@ -15,6 +15,12 @@ class PropertyToCounty
     parse_usps_json
   end
 
+  protected
+
+  def request
+    "http://geocoding.geo.census.gov/geocoder/geographies/address?street=#{self.number}+#{self.street}&city=#{self.city}&state=#{self.state}&benchmark=Public_AR_Current&vintage=ACS2013_Current&layers=84&format=json"
+  end
+
   private
 
   def send_request
@@ -25,10 +31,6 @@ class PropertyToCounty
 
   def parse_usps_json
     self.usps_json["result"]["addressMatches"].first["geographies"]["Counties"].first["NAME"]
-  end
-
-  def request
-    "http://geocoding.geo.census.gov/geocoder/geographies/address?street=#{self.number}+#{self.street}&city=#{self.city}&state=#{self.state}&benchmark=Public_AR_Current&vintage=ACS2013_Current&layers=84&format=json"
   end
 
   def remove_whitespace(string)
